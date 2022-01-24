@@ -25,3 +25,11 @@ jobs:
         run: |
           ls ${{ github.workspace }}
       - run: echo "🍏 This job's status is ${{ job.status }}."
+      
+      - name: trigger single Job
+        uses: ogind-rshinde/java-ci-cd-1@main
+        with:
+          url: "http://cicd001.fms.ogintegration.us:8080"
+          user: "jenkins"
+          token: ${{ secrets.TOKEN }}
+          job: "java-build-dev001"
