@@ -27,7 +27,7 @@ jobs:
       - run: echo "🍏 This job's status is ${{ job.status }}."
       
       - name: trigger single Job
-        uses: ogind-rshinde/java-ci-cd-1@main
+        uses: actions/checkout@v2
         with:
           url: "http://cicd001.fms.ogintegration.us:8080"
           user: "jenkins"
