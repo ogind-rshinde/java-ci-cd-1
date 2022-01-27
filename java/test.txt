@@ -1,1 +1,5 @@
 test file for the java build testing
+
+test workflow
+
+new way added
