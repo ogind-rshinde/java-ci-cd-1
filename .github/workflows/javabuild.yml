@@ -25,3 +25,12 @@ jobs:
           user: "jenkins"
           token: ${{ secrets.TOKEN }}
           job: "java-build-dev001"
+          
+      - name: JAVA build
+        uses: actions/setup-java@v2
+        with:
+          java-version: '11'
+          distribution: 'temurin'
+          cache: maven
+      - name: Build with Maven
+        run: mvn -B package --file pom.xml
