@@ -6,9 +6,15 @@ pipeline {
     }
   }  
   stages {
-    stage ('Build Java') {
+    stage ('Test Junit') {
       steps {
-          echo "Build is : ${buildMode}"
+          sh './mvnw test'
+      }
+      
+      post {
+        always {
+          junit 'pom.xml'
+        }
       }
     }
 
